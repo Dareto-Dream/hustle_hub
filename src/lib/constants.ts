@@ -1,5 +1,7 @@
 export const DISCORD_INVITE = "https://discord.gg/YU6mWWzXmD";
 export const DISCORD_USERNAME = "ahgbk";
+export const SITE_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export const LOGO_PATH = `${SITE_BASE_PATH}/logo.png`;
 
 export type Rank = {
   name: string;

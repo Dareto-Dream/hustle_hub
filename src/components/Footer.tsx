@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { DISCORD_INVITE } from "@/lib/constants";
+import { DISCORD_INVITE, LOGO_PATH } from "@/lib/constants";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,7 +13,7 @@ export default function Footer() {
               className="relative h-10 w-10 overflow-hidden"
               style={{ border: "1px solid var(--border-strong)" }}
             >
-              <Image src="/logo.png" alt="" fill sizes="40px" className="object-cover" />
+              <Image src={LOGO_PATH} alt="" fill sizes="40px" className="object-cover" />
             </div>
             <div>
               <div

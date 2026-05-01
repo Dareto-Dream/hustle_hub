@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Barlow, IBM_Plex_Mono } from "next/font/google";
+import { LOGO_PATH } from "@/lib/constants";
 import "./globals.css";
 
 const display = Bebas_Neue({
@@ -24,15 +25,19 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      "https://dareto-dream.github.io/hustle_hub/"
+  ),
   title: "Solo Hustle Hub — Freelance · Jobs · Hiring · Employees",
   description:
     "The Discord community where freelancers and clients mean business. No scams, no time-wasters — just real opportunities, real work, real money.",
-  icons: { icon: "/logo.png" },
+  icons: { icon: LOGO_PATH },
   openGraph: {
     title: "Solo Hustle Hub — Freelance · Jobs · Hiring · Employees",
     description:
       "Post jobs. Showcase your skills. Build your hustle. Join the Discord.",
-    images: ["/logo.png"],
+    images: ["logo.png"],
     type: "website",
   },
 };

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { useState } from "react";
-import { DISCORD_INVITE } from "@/lib/constants";
+import { DISCORD_INVITE, LOGO_PATH } from "@/lib/constants";
 
 export default function Nav() {
   const { scrollY } = useScroll();
@@ -30,7 +30,7 @@ export default function Nav() {
           className="relative h-8 w-8 overflow-hidden"
           style={{ border: "1px solid var(--border-strong)" }}
         >
-          <Image src="/logo.png" alt="" fill sizes="32px" className="object-cover" priority />
+          <Image src={LOGO_PATH} alt="" fill sizes="32px" className="object-cover" priority />
         </div>
         <span
           className="hidden font-display text-[1.1rem] leading-none tracking-wide sm:block"
