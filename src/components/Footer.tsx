@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { DISCORD_INVITE, LOGO_PATH } from "@/lib/constants";
+import {
+  COMPANY_NAME,
+  COMPANY_URL,
+  CREATOR_NAME,
+  DISCORD_INVITE,
+  LOGO_PATH,
+} from "@/lib/constants";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -40,6 +46,14 @@ export default function Footer() {
             <a href="#features" className="transition-colors hover:text-[var(--cream)]">Who it&apos;s for</a>
             <a href="#ranks" className="transition-colors hover:text-[var(--cream)]">Ranks</a>
             <a
+              href={COMPANY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-[#FFD600]"
+            >
+              DeltaVDevs
+            </a>
+            <a
               href={DISCORD_INVITE}
               target="_blank"
               rel="noopener"
@@ -54,6 +68,17 @@ export default function Footer() {
             style={{ color: "var(--cream-muted)" }}
           >
             <div>© {year} Solo Hustle Hub</div>
+            <div className="mt-1">
+              Site by{" "}
+              <a
+                href={COMPANY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#FFD600]"
+              >
+                {CREATOR_NAME} / {COMPANY_NAME}
+              </a>
+            </div>
             <a
               href={DISCORD_INVITE}
               target="_blank"

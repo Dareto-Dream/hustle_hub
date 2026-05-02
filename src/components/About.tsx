@@ -1,7 +1,8 @@
 "use client";
 
 import { Reveal } from "./Reveal";
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
+import { COMPANY_NAME, COMPANY_URL, CREATOR_NAME } from "@/lib/constants";
 
 const BULLETS = [
   "Real-time gig drops",
@@ -68,22 +69,53 @@ export default function About() {
         </div>
 
         <Reveal delay={0.22}>
-          <ul style={{ border: "1px solid var(--border)" }}>
-            {BULLETS.map((b, i) => (
-              <li
-                key={b}
-                className="group flex cursor-default items-center gap-3 px-5 py-4 transition-colors duration-150 hover:bg-[#FFD600]"
-                style={{ borderTop: i > 0 ? "1px solid var(--border)" : undefined }}
-              >
-                <Check
-                  className="h-4 w-4 shrink-0 text-[var(--yellow)] transition-colors group-hover:text-black"
-                />
-                <span className="text-sm font-medium text-[var(--cream)] transition-colors group-hover:text-black">
-                  {b}
+          <div className="space-y-5">
+            <ul style={{ border: "1px solid var(--border)" }}>
+              {BULLETS.map((b, i) => (
+                <li
+                  key={b}
+                  className="group flex cursor-default items-center gap-3 px-5 py-4 transition-colors duration-150 hover:bg-[#FFD600]"
+                  style={{ borderTop: i > 0 ? "1px solid var(--border)" : undefined }}
+                >
+                  <Check
+                    className="h-4 w-4 shrink-0 text-[var(--yellow)] transition-colors group-hover:text-black"
+                  />
+                  <span className="text-sm font-medium text-[var(--cream)] transition-colors group-hover:text-black">
+                    {b}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={COMPANY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block border border-[var(--border)] bg-[var(--ink-2)] p-5 transition-colors duration-150 hover:bg-[#FFD600]"
+              aria-label={`Visit ${COMPANY_NAME}`}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[var(--cream-muted)] transition-colors group-hover:text-black/55">
+                    Creator Credit
+                  </div>
+                  <div className="mt-3 font-display text-[2rem] leading-none tracking-wide text-[var(--cream)] transition-colors group-hover:text-black">
+                    {CREATOR_NAME}
+                  </div>
+                </div>
+                <span className="grid h-10 w-10 shrink-0 place-items-center border border-[var(--border-strong)] text-[var(--cream-dim)] transition-colors group-hover:border-black/20 group-hover:text-black">
+                  <ExternalLink className="h-5 w-5" />
                 </span>
-              </li>
-            ))}
-          </ul>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-[var(--cream-dim)] transition-colors group-hover:text-black/70">
+                Built under {COMPANY_NAME}, the team behind focused web builds,
+                community launches, and creator tools.
+              </p>
+              <span className="mt-5 inline-flex font-mono text-[0.68rem] uppercase tracking-[0.2em] text-[var(--yellow)] transition-colors group-hover:text-black">
+                deltavdevs.com
+              </span>
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

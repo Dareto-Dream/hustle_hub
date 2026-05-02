@@ -1,5 +1,8 @@
 export const DISCORD_INVITE = "https://discord.gg/YU6mWWzXmD";
 export const DISCORD_USERNAME = "ahgbk";
+export const CREATOR_NAME = "DeltaVortex";
+export const COMPANY_NAME = "DeltaVDevs";
+export const COMPANY_URL = "https://deltavdevs.com";
 export const SITE_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const LOGO_PATH = `${SITE_BASE_PATH}/logo.png`;
 

@@ -1,6 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Barlow, IBM_Plex_Mono } from "next/font/google";
-import { LOGO_PATH } from "@/lib/constants";
+import {
+  COMPANY_NAME,
+  COMPANY_URL,
+  CREATOR_NAME,
+  LOGO_PATH,
+} from "@/lib/constants";
 import "./globals.css";
 
 const display = Bebas_Neue({
@@ -32,6 +37,9 @@ export const metadata: Metadata = {
   title: "Solo Hustle Hub — Freelance · Jobs · Hiring · Employees",
   description:
     "The Discord community where freelancers and clients mean business. No scams, no time-wasters — just real opportunities, real work, real money.",
+  authors: [{ name: CREATOR_NAME, url: COMPANY_URL }],
+  creator: CREATOR_NAME,
+  publisher: COMPANY_NAME,
   icons: { icon: LOGO_PATH },
   openGraph: {
     title: "Solo Hustle Hub — Freelance · Jobs · Hiring · Employees",
